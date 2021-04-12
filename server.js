@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const recipeRouter = require("./routes/recipeRouter");
+const breakfastsRouter = require("./routes/breakfastsRouter");
 
 const hostname = "localhost";
 const port = 3001;
@@ -10,6 +11,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 app.use("/recipes", recipeRouter);
+app.use("/breakfasts", breakfastsRouter);
 
 
 app.use(express.static(__dirname + "/public"));
