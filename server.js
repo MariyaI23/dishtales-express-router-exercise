@@ -2,6 +2,10 @@ const express = require("express");
 const morgan = require("morgan");
 const recipeRouter = require("./routes/recipeRouter");
 const breakfastsRouter = require("./routes/breakfastsRouter");
+const lunchesRouter = require("./routes/lunchesRouter");
+const dinnersRouter = require("./routes/dinnersRouter");
+const aboutRouter = require("./routes/aboutRouter");
+const contactRouter = require("./routes/contactRouter");
 
 const hostname = "localhost";
 const port = 3001;
@@ -12,6 +16,10 @@ app.use(express.json());
 
 app.use("/recipes", recipeRouter);
 app.use("/breakfasts", breakfastsRouter);
+app.use("/lunches", lunchesRouter);
+app.use("/dinners", dinnersRouter);
+app.use("/about", aboutRouter);
+app.use("/contact", contactRouter);
 
 
 app.use(express.static(__dirname + "/public"));
